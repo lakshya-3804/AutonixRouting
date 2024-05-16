@@ -39,9 +39,9 @@ export default function Customer() {
       <Header />
       <div id="search">
         <div className="over">
-          <div className="logo2">
+          <div className="logo1">
             <img src={img24} alt="" style={{ zIndex: 0 }} />
-            <div className="name1"  style={{ fontFamily: "'RS'", color: "#fff", fontSize: "65px"}}>Autonix</div>
+            <div className="name"  style={{ fontFamily: "'RS'", color: "#fff", fontSize: "65px"}}>Autonix</div>
           </div>
           <div className="form">
             <form>
