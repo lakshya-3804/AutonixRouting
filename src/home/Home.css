@@ -1,0 +1,384 @@
+body{
+    background-color:#2d2e32;    
+    /* background-color: #000; */
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    color: #fff;
+    font-family: CG;
+    text-align: center;
+}
+
+/* header part */
+header{
+    background-color: black;
+    animation-name: appear;
+    animation-duration: 6s;
+    color: white;
+    width: 98%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    margin: 0px;
+    opacity: 1;
+    position: sticky;
+    top: 0;
+    transition: 0.3s;
+    font-family: CG;
+}
+
+#sidenav{
+    position: absolute;
+    line-height: 50px; background-color: #000; color: #fff; height: 100%; 
+    z-index: 2;
+    font-family: CG;
+    padding: 40px;
+    padding-bottom: 30px;
+    width: 0;
+    overflow-x: hidden;
+    transition: width 0.6s;
+    left: 0;
+    visibility: hidden;
+}
+
+#autonix-logo{
+    letter-spacing: 10px; 
+    color: rgb(185, 238, 79); 
+    font-size: xx-large;
+    transition: all 1s ease-in-out .3s;
+}
+#autonix-logo:hover{
+    letter-spacing: 40px;
+    /* font-size: 40px; */
+}
+
+#sidenav.visible{
+    width: fit-content;
+    visibility: inherit;
+}
+@media (max-width: 721px) {
+    #autonix-logo{
+        display: none;
+    }
+}
+
+#sidenav a:hover{
+    color: #9ECA2E;
+    transition: 0.5s;
+}
+#sidenav a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#cross:hover{
+    color: #9ECA2E;
+}
+#menu{
+    transition: 0.5s;
+}
+#menu:hover{
+    color: #9ECA2E;
+}
+#signInBtnHeader:hover{
+    scale:1.1;
+  }
+
+/* header part done */
+
+
+
+
+/* section part */
+#content-body {
+    display: flex;
+    /* background-color: #0a0a0a; */
+    background-color: #2d2e32;
+    align-items: center;
+    justify-content: space-around;
+    padding : 100px 0px;
+    margin: auto;
+    padding-bottom: 10vh;
+    max-height: 100vh;
+    width: 100%;
+    flex-basis: 30%;
+  }
+
+  .body-part-1{
+    width:45%;
+  }
+  
+  .body-title h1 {
+    font-size: 50px;
+    letter-spacing: -1.5px;
+  }
+  
+  .body-title p {
+    font-size: 17px;
+    /* padding: 20px 0; */
+    color: #cacaca;
+    font-weight: 500;
+    line-height: 25px;
+    text-wrap: wrap;
+    width:80%;
+    margin:auto
+  }
+  
+  .body-title a {
+    font-size: 16px;
+    color: #64f4ac;
+    font-weight: 600;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+  
+  .body-part-2 {
+    position: relative;
+  }
+  
+  
+  .mechanic-guy {
+      /* position: absolute; */
+      background: url("../assets/mechanic_image.jpg");
+      /* top: 47px; */
+      height: 450px;
+      width: 450px;
+      border-radius: 50%;
+      background-size: cover;
+    }
+    .background-circle {
+      background: #28292d;
+      border-radius: 50%;
+      width: 450px;
+      height: 450px;
+      box-shadow: 0 0 20px #00000080;
+    }
+  img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+  }
+  
+  .circle {
+    position: absolute;
+    top: 255px;
+    left: 187px;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: animateCircle 40s linear infinite;
+  }
+  
+  @keyframes animateCircle {
+    0% {
+      transform: perspective(1000px) rotateY(0deg) rotateX(15deg)
+        translateY(-30px);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg) rotateX(15deg)
+        translateY(-30px);
+    }
+  }
+  
+  .circle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2d2e32;
+    box-shadow: 0px 0px 5px #00000080;
+    border-radius: 50%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * calc(360deg / 15))) translateZ(300px);
+  }
+  
+  .circle span img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+ 
+  @media  (min-width : 960px){
+  .body-title-outside-section{
+    display: none;
+  }
+  }
+
+  @media  (max-width : 960px) {
+    #content-body{
+        display: none;
+    }
+  }
+
+  /* end */
+
+  /* services css */
+  #serv{
+    background-color: #2d2e32;
+  }
+        .services-part h1{
+            color:rgb(185, 238, 79);
+        }
+        .services-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* border: 1px solid white; */
+            flex-wrap: wrap;   
+            margin: auto;    
+            padding-bottom: 100px;     
+        }
+
+        .services-container-box{
+            
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background-size:100% 100%;           
+            background-repeat: no-repeat;
+            box-shadow: 0px 0px 0.5rem rgb(185, 238, 79);
+            border-radius: 5px;
+            margin: 10px;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .services-container-box:hover{
+            width: 325px;
+            height: 225px;
+            box-shadow: 10px 10px 20px rgb(185, 238, 79);
+        }
+
+        .services-container-box h3{
+            color:white;
+            text-align: center;
+            font-size: x-large;
+        }
+
+        #services-container-box1{background-image: url(../assets/spare.webp);}
+        #services-container-box2{background-image: url(../assets/maintain.webp);}
+        #services-container-box3{background-image: url(../assets/mechanic.webp);}
+  /* services css done */
+
+
+
+  /* footer CSS */
+  @font-face {
+    font-family: Coco ;
+    src: url('https://fonts.cdnfonts.com/css/coco-gothic');
+} 
+
+footer {
+    /* background-color:#242323; */
+    background-color: #0a0a0a !important;    
+    padding: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+}
+
+h2 {
+    color: #00ff00; /* Green heading color */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quick-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.quick-links a:hover {
+    color: #00ff00; /* Green color on hover */
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-icons a:hover {
+    color: #00ff00; /* Green color on hover */
+}
+
+.address {
+    color: #888;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Classy Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    opacity: 0;
+    animation: fadeInUp 1s forwards; /* Animation duration and fill-mode */
+    animation-delay: 0.5s; /* Delay the animation */
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.footer-img {
+    width: 30px;
+    height: 30px;
+    justify-content: space-around;
+}
+
+
+.others {
+    opacity: 0;
+    animation: fadeInUp 1s forwards; /* Animation duration and fill-mode */
+    animation-delay: 0.5s; 
+}
+
+/* Add more styling as needed */
+
+@media (max-width: 600px) {
+    /* Add responsive styles for smaller screens */
+    .animated {
+        opacity: 0;
+        animation: fadeInUp 1s forwards; /* Animation duration and fill-mode */
+        animation-delay: 0.5s; /* Delay the animation */
+        display: block;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+        margin-left: 10px;
+    }
+}
+
+/* footer end */

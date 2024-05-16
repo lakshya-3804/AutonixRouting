@@ -1,0 +1,106 @@
+@import url('https://fonts.cdnfonts.com/css/racing-sans-one');
+
+
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Racing Sans One', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: CG;
+} */
+
+.head {
+  text-align: center;
+  font-size: 60px;
+  color: #9ECA2E;
+}
+
+/* p {
+  text-align: center;
+  font-size: 30px;
+  color: #9ECA2E;
+}
+
+section {
+  padding: 20px;
+} */
+
+#services {
+  padding: 40px;
+  justify-content: space-between;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 22%); 
+  gap: 60px; 
+}
+
+.serviceItem {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgb(244, 244, 244);
+}
+
+.serviceItem img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.serviceItem:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px rgb(3, 254, 3);
+}
+
+.serviceItem:hover img {
+  transform: scale(1.05);
+}
+
+.head {
+  letter-spacing: 15px;
+}
+
+.head:hover {
+  letter-spacing: 30px;
+  transition: all 1s ease-in-out 0.5s;
+}
+
+.serviceItem img {
+  /* height: 80px; */
+  /* width: 80px; */
+  border-radius: 0;
+}
+
+.container {
+  padding: 50px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .photoGrid {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .container {
+      padding: 20px; 
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .photoGrid {
+      grid-template-columns: repeat(1, 1fr); 
+  }
+
+  .container {
+      padding: 20px; 
+  }
+}

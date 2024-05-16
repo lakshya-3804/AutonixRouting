@@ -1,0 +1,97 @@
+
+  /* footer CSS */
+  @font-face {
+    font-family: Coco ;
+    src: url('https://fonts.cdnfonts.com/css/coco-gothic');
+} 
+
+footer {
+    /* background-color:#242323; */
+    background-color: #141415;
+    /* background-color:#2d2e32; */
+    padding: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+}
+
+h2 {
+    color: #00ff00; /* Green heading color */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quick-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.quick-links a:hover {
+    color: #00ff00; /* Green color on hover */
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-icons a:hover {
+    color: #00ff00; /* Green color on hover */
+}
+
+.address {
+    color: #888;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.footer-img {
+    width: 30px;
+    height: 30px;
+    justify-content: space-around;
+}
+
+
+.others {
+    opacity: 0;
+    animation: fadeInUp 1s forwards; /* Animation duration and fill-mode */
+    animation-delay: 0.5s; 
+}
+
+.footer-secition-about{
+    width: 30%;
+}
+.footer-section{
+    width: 30%;
+}
+
+/* Add more styling as needed */
+
+@media (max-width: 600px) {
+    /* Add responsive styles for smaller screens */
+    .animated {
+        opacity: 0;
+        animation: fadeInUp 1s forwards; /* Animation duration and fill-mode */
+        animation-delay: 0.5s; /* Delay the animation */
+        display: block;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+        margin-left: 10px;
+    }
+}

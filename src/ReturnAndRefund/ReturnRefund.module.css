@@ -1,0 +1,96 @@
+@import url('https://fonts.cdnfonts.com/css/racing-sans-one');
+
+@font-face {
+    font-family: RS;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/racing-sans-one@latest/latin-400-normal.woff2);
+}
+  
+@font-face {
+font-family: CG;
+src: url("https://fonts.cdnfonts.com/css/coco-gothic");
+}
+  
+  
+.returnbody {
+color: #fff;
+font-family: Arial, sans-serif;
+margin-top: 0;
+top : 0;
+padding-top: 60px;
+font-family: 'Helvetica', sans-serif;
+font-family: Coco;
+font-size: 18px;
+background-image: linear-gradient(rgba(63,66,65,0.7),rgba(63,66,65,0.7)), url('./return-refund.jpg');
+background-repeat: repeat-x;
+background-size: cover;
+background-blend-mode: 0.2;
+text-align: center;
+height: auto;
+width: 100%;
+
+/* position:absolute; */
+}
+  
+  .container1 {
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('https://t4.ftcdn.net/jpg/06/46/36/49/360_F_646364968_UQCmc5iGt4hZzZUB70f7uOrOfodXPXan.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: 0.2; */
+    height: 100%;
+    width: 100%;
+    box-shadow: #9ECA2E;
+  }
+  
+  
+  
+  /* h1 {
+    color: #9ECA2E;
+    font-size: 60px;
+    transition: .3s;
+  } */
+  
+  /* section {
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+  }
+   */
+  .container1 h2 {
+    color: #9ECA2E;
+    font-size: 30px;
+  }
+  
+  /* .container p {
+    margin-bottom: 20px;
+    font-size: 28px;
+  } */
+  
+  .head {
+    text-align: center;
+    font-size: 24px;
+    transition: .3s;
+  }
+  
+  .head:hover {
+    letter-spacing: 8px;
+  }
+  
+  h3 {
+    color: #9ECA2E;
+  }
+  
+  .autonix {
+    font-size: 60px;
+    font-family: RS;
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      background-size: 500px;
+    }
+  
+    .autonix {
+      font-size: 30px;
+    }
+  }
+  

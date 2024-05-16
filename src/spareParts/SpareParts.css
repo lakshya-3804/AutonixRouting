@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+
+:root {
+  --first-color: #e3f8ff;
+  --second-color: rgb(185, 238, 79);
+  --third-color: #ffe8df;
+  --accent-color: #ff5151;
+  --dark-color: #161616;
+}
+
+:root {
+  --body-font: "Open Sans";
+  --h1-font-size: 1.5rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --h1-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+*,::after,::before {box-sizing: border-box;}
+
+body {
+  
+  margin:0px;
+  background-color: rgb(30, 28, 28);
+  
+  color: var(--first-color);
+  font-family: var(--body-font);
+}
+
+.title{display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-top:10px;
+}
+
+.title img{
+  width:80px;
+  border-radius: 50%;
+}
+
+.logo{
+  transition: 0.2s ;
+  cursor: pointer;
+}
+
+.logo:hover{transform: scale(1.12) rotate(360deg);}
+
+
+h1 {
+  font-size: 50px;
+  color: var(--second-color);
+  font-weight: 1000;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {text-decoration: none;}
+
+.trending{
+  text-align: center;
+  font-size: x-large;
+  color: rgb(185, 238, 79);
+}
+
+.bd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1200px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin: auto;
+}
+
+.title-shop {
+  position: relative;
+  margin: 0 2.5rem;
+}
+
+.banner {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #ffe8df !important;
+  box-shadow: 0 0 0.5rem var(--second-color);
+}
+
+.banner .card__img {
+  width: 380px;
+  mix-blend-mode: darken;
+  height: 300px;
+  padding: 2rem 0px !important;
+}
+
+.banner img{
+  border-radius: 0;
+}
+
+
+.banner .card__content {
+  width: 20%;
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  /* transition: 0.5s; */
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner .card__content .card__cont {font-size: 1.5rem !important;}
+
+.banner .card__content .card__text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  color:black;
+}
+
+/* for autonix button */
+.banner .card__content p {
+  font-size: 1.5rem !important;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #161616;
+  color: #fff;
+  padding: .9rem 0px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.banner .card__name {
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 3.5rem;
+  height: 100%;
+  /* writing-mode: vertical-rl; */
+  transform: rotate(180deg);
+  text-align: center;
+  background-color: var(--dark-color);
+  color: #fff;
+  font-weight: bold;
+  /* transition: 0.5s; */
+}
+
+.card {
+  position: relative;
+  display: flex;
+  background-color: #ffe8df;
+  color:black;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0rem 0.5rem var(--second-color);
+}
+
+.card__img {
+  width: 180px;
+  height: 250px;
+  padding: 3rem 0;
+  transition: 0.5s;
+  mix-blend-mode:darken;
+}
+
+.card__img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+
+}
+
+.card__name {
+  position: absolute;
+  left: -25%;
+  top: 0;
+  width: 3.5rem;
+  height: 100%;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.card__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: 0.5s;
+}
+
+.card__cont {
+  display: block;
+  text-align: center;
+}
+
+.card__cont--before {
+  font-size: var(--normal-font-size);
+  font-weight:bold;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.card__cont--now {
+  font-size: var(--h3-font-size);
+  font-weight: bold;
+}
+
+.companyHead{
+  text-align: center;
+  font-size: xx-large;
+  color:rgb(185, 238, 79);
+}
+
+.ShopByCompany{
+  display: flex;
+  width: 80vw;  
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content:center;
+}
+
+.card2{
+  background-color: #ffe8df;
+  width: 10%;
+  border-radius: 7px;
+  margin: 15px;
+}
+
+.card2 img{
+  width: 90%;
+  height: 95%;
+  mix-blend-mode: darken;
+  border-radius: 0;
+}
+
+.card2:hover{
+  scale:1.05;
+  border: 2px solid rgb(185, 238, 79);
+}
+
+.card:hover {box-shadow: 0 0.5rem 0.5rem #d1d9e6;}
+.card:hover .card__name {left: 0;}
+
+.card:hover .card__img {
+  transform: rotate(30deg);
+  margin-left: 3.5rem;
+}
+.card:hover .card__content {
+  margin-left: 3.5rem;
+  padding: 0 1.5rem;
+}
+
+.footer{
+  color: whitesmoke;
+  background-color: rgb(32, 32, 32);
+  text-align: center;
+  font-size: large;
+  height: 40px;
+  margin-top: 10px;
+}
+
+
+
+
+/* ADDING HEADER AND FOOTER CSS */
+
+@import url('https://fonts.cdnfonts.com/css/coco-gothic');
+
+@font-face {
+  font-family: RS;
+  src: url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+}
+
+@font-face {
+  font-family: CG;
+  src: url("https://fonts.cdnfonts.com/css/coco-gothic");
+}
+
+@keyframes sweepplace {
+  0% {
+    letter-spacing: 0%;
+    height: 100%;
+    top: 50%;    
+  }
+  50% {
+    letter-spacing: 30px;
+    height: 100%;
+    top: 50%;    
+  }
+  100% {
+    letter-spacing: 0px;
+    height: 50%;
+    top: 0;
+  }
+}
+
+@keyframes appear {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+header {
+  background-color: black;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  color: white;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  margin: 0px;
+  opacity: 1;
+  position: sticky;
+  top: 0;
+  transition: 0.3s;
+  font-family: CG;
+}
+
+#sidenav {
+  position: absolute;
+  line-height: 50px;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  z-index: 2;
+  font-family: CG;
+  padding: 40px;
+  padding-bottom: 30px;
+  width: 0;
+  overflow-x: hidden;
+  transition: width 0.6s;
+  left: 0;
+  visibility: hidden;
+}
+
+#sidenav.visible {
+  width: fit-content;
+  visibility: inherit;
+}
+
+#sidenav a:hover {
+  color: #9ECA2E;
+  transition: 0.5s;
+}
+
+#sidenav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+#cross:hover {
+  color: #9ECA2E;
+}
+
+#menu {
+  transition: 0.5s;
+}
+
+#menu:hover {
+  color: #9ECA2E;
+}
+
+#signInBtnHeader:hover{
+  scale:1.1;
+}
+
+footer{
+  background-color:#2d2e32;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+}
