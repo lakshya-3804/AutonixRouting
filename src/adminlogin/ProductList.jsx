@@ -20,7 +20,7 @@ export default function ProductList() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/admin/products")
+        fetch("http://localhost:5174/admin/products")
             .then((res) => {
                 return res.json();
             })

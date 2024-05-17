@@ -35,7 +35,7 @@ export default function SpareParts(){
 
   useEffect(() => {
     window.scrollTo(0, 0);
-      fetch("http://localhost:8080/admin/products")
+      fetch("http://localhost:5174/admin/products")
           .then((res) => {
               return res.json();
           })

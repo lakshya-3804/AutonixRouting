@@ -18,6 +18,7 @@ import st from './mechanic.module.css';
 import Footer from '../Footer/footer';
 import Header from '../Header/Header';
 import { useEffect } from 'react';
+import swal from 'sweetalert2';
 
 
 
@@ -25,14 +26,28 @@ const Mechanic = () => {
     const navigate = useNavigate();
 
     function handleClick() {
-        // Display the first alert
-        alert('PLEASE WAIT UNTIL YOUR BOOKING IN PROCESS');
-
-        // Set a delay of 5 seconds (5000 milliseconds) before showing the next alert
-        setTimeout(function() {
-            alert('YOUR VEHICLE SERVICING SLOT IS SUCCESSFULLY BOOKED');
-        }, 3000);navigate("/form");
-    }
+      // Display the first SweetAlert notification
+      swal.fire({
+          title: 'PLEASE WAIT',
+          text: 'Your booking is in process...',
+          icon: 'info',
+          showConfirmButton: false,
+          timer: 3000 // 3 seconds
+      }).then(() => {
+          // After the first notification, display the second SweetAlert notification
+          swal.fire({
+              title: 'BOOKING SUCCESSFUL',
+              text: 'Your vehicle servicing slot is successfully booked!',
+              icon: 'success',
+              timer: 2000, // 2 seconds
+              timerProgressBar: true, // Enable progress bar
+              didClose: () => {
+                  // After the second notification, navigate to the form page
+                  navigate("/form");
+              }
+          });
+      });
+  }
 
     useEffect(()=>{
       window.scrollTo(0, 0);
