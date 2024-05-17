@@ -20,7 +20,7 @@ export default function SpareParts(){
         <Header />
         <div class="title">
       <h1 class="title-shop">AUTONIX</h1>
-      <img src={require("./essentials/img/Autonix-logo.png")} class="logo" />
+      <img src={require("./essentials/img/Autonix-logo.png")} class="logo2" />
     </div>
 
     <article class="banner">

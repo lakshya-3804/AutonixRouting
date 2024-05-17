@@ -1,59 +1,73 @@
 import "./Signupin.css"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import auto from './assets/Auto.png'
-import Header from "../Header/Header.jsx";
-import Footer from "../Footer/footer.jsx";
-// import axios from "axios";
+import Header from "../Header/Header";
+import Footer from "../Footer/footer";
+import axios from "axios";
+import { AuthContext } from "./AuthContext";
+import { Route, Navigate } from 'react-router-dom';
+
+
+
+const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
+
+const registerAPICall = (registerObj) => axios.post(
+    AUTH_REST_API_BASE_URL + '/signup', 
+    registerObj);
 
 
 export default function Signup() {
 
-    const [data, setData] = useState(
-    {
-        email: '',
-      firstName: '',
-      lastName: '',
-      userName: '',
-      password: '',
+    const [email,setEmail] = useState(" ");
+    const [password,setPassword] = useState(" ");
+    const [fullName,setFullName] = useState(" ");
+    const [regSuccess, setRegSuccess] = useState(false);
+    const history = useNavigate();
 
-    }
-    );
-
-    const[error, setError] = useState({
-      errors:{},
-      isError: false,
-    })
 
     // Handle Change 
     const handleChange = (event, param) => {
 
-      setData({...data, [param]:event.target.value})
+      if(param === 'Email') {
+        setEmail(event.target.value)
+      } else if (param === 'Password') {
+        setPassword(event.target.value)
+      } else if (param === 'fullName') {
+        setFullName(event.target.value)
+      }
 
     }
 
 
     // Submit form
 
-    const submitForm = (event) => {
-      event.preventDefault();
+    
+    function handleRegistration(e) {
+      e.preventDefault();
+
+      const register = {email, password, fullName};
+
+      console.log(register);
+
+      registerAPICall(register).then((response) => {
+        console.log(response.data);
+        setRegSuccess(true);
+
+      }).catch(error => {
+        console.error(error);
+      })
+
+      if(regSuccess) {
+        history('/home')
+      }
 
     }
 
-    // async function save(event) {
-    //     event.preventDefault();
-    //     try {
-    //       await axios.post("http://localhost:8080/api/v1/user/save", {
-    //       username: username,
-    //       email: email,
-    //       password: password,
-    //       });
-    //       alert("New user registered successfully!!");
 
-    //     } catch (err) {
-    //       alert(err);
-    //     }
-    //   }
 
+
+  
     return (
         <>
         <Header />
@@ -63,52 +77,42 @@ export default function Signup() {
         <div className="name" style={{ fontFamily: 'RS', color: '#fff', fontSize: '65px' }}>Autonix</div>
     </div>
     <div className="form">
-    <form action="" onSubmit={submitForm}>
-    <fieldset name="form" id="regForm" style={{ color: '#fff'}}>
+    <form action="" >
+    <fieldset name="form" style={{ color: '#fff' }}>
       {/* { JSON.stringify(data) } */}
       <p style={{ fontSize: '30px', fontWeight: 400 }}>SIGN-UP</p>
 
       <span>ENTER YOUR EMAIL</span><br />
       <input id="e" type="text" name="email" placeholder="EMAIL" 
-      onChange={(event) => handleChange(event, 'email')}
-      value={data.email}
-      required /><br />
-      <span>FIRST NAME</span><br />
-      <input id="e" type="text" name="fName" placeholder="FIRST NAME" 
-      onChange={(event) => handleChange(event, 'firstName')}
-      value={data.firstName}
-      required /><br />
-      <span>LAST NAME</span><br />
-      <input id="e" type="text" name="lName" placeholder="LAST NAME" 
-      onChange={(event) => handleChange(event, 'lastName')}
-      value={data.lastName}
-      required /><br />
-      <span>USERNAME</span><br />
-      <input id="e" type="text" name="username" placeholder="USERNAME" 
-      onChange={(event) => handleChange(event, 'userName')}
-      value={data.userName}
-      required /><br />
+      onChange={(event) => handleChange(event, 'Email')}
+      // value={email}
+      required /><br /><br />
+
       <span>PASSWORD</span><br />
-      <input id="e" type="text" name="password" placeholder="PASSWORD" 
-      onChange={(event) => handleChange(event, 'password')}
-      value={data.password}
-      required /><br />
+      <input id="e" type="password" name="password" placeholder="PASSWORD" 
+      onChange={(event) => handleChange(event, 'Password')}
+      // value={password}
+      required /><br /><br />
+
+      <span>USERNAME</span><br />
+      <input id="e" type="text" name="fullname" placeholder="ENTER YOUR FULL NAME" 
+      onChange={(event) => handleChange(event, 'fullName')}
+      // value={fullName}
+      required /><br /><br />
 
 
-      <button 
+      <input type="submit" className="Submitbtn"
       style={{fontSize: '20px', 
             fontWeight: 'lighter', 
             backgroundColor: '#9ECA2E', 
             width: '100%', 
             padding: '20px'}}
-        // onClick={save}
-        >
-        SIGN-UP
-      </button>
+            onClick={handleRegistration}
+      />
       <br />
       <p>
         Got a Ride in Our Club Already?{' '}
-        <a href="/signIn" style={{ color: 'lightblue' }}>
+        <a href="/signin" style={{ color: 'lightblue' }}>
           Sign-in
         </a>
       </p>
@@ -121,3 +125,7 @@ export default function Signup() {
     )
     
 }
+
+// export function PrivateRoute({ isLoggedIn, ...props }) {
+//   return isLoggedIn ? <Route {...props} /> : <Navigate to="/signIn" />;
+// }

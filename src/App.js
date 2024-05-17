@@ -1,4 +1,3 @@
-
 import './App.css';
 import Maintenance from './Maintenance/maintenance_app.jsx';
 import Customer from './Mechanics/Form.jsx';
@@ -13,29 +12,38 @@ import Home from './home/Home';
 import Signup from './signIn/Signup';
 import Signupin from './signIn/Signupin';
 import SpareParts from './spareParts/SpareParts';
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from './signIn/AuthContext';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  // const { isLoggedIn } = useContext(AuthContext);
+  const isLoggedIn = true;
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/spare" element={<SpareParts />} />
-        <Route path="/signIn" element={<Signupin />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/signin" element={<Signupin />} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/tnc" element={<Tnc />} />
-        <Route path="/return" element={<ReturnRefund />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/cs" element={<CustomerSupport />} />
-        <Route path="/maintain" element={<Maintenance />} />
-        <Route path="/mechanic" element={<Mechanic/>} />
-        <Route path="/form" element={<Customer/>} />
-        
+        <>
+        {isLoggedIn && (
+          <>
+            <Route path="/spare" element={<SpareParts />} />
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/tnc" element={<Tnc />} />
+            <Route path="/return" element={<ReturnRefund />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/cs" element={<CustomerSupport />} />
+            <Route path="/maintain" element={<Maintenance />} />
+            <Route path="/mechanic" element={<Mechanic />} />
+            <Route path="/form" element={<Customer />} />
+          </>
+        )}
+        </>
       </Routes>
     </BrowserRouter>
-    
   );
 }
 

@@ -1,5 +1,5 @@
 body{
-    background-color:#2d2e32;    
+    background-color: #242323; 
     /* background-color: #000; */
     color: white;
     margin: 0;
@@ -156,7 +156,7 @@ header{
       height: 450px;
       box-shadow: 0 0 20px #00000080;
     }
-  img{
+.home-image{
     width: 100px;
     height: 100px;
     border-radius: 50%;

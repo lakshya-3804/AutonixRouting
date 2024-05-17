@@ -48,12 +48,12 @@ body {
   border-radius: 50%;
 }
 
-.logo{
+.logo2{
   transition: 0.2s ;
   cursor: pointer;
 }
 
-.logo:hover{transform: scale(1.12) rotate(360deg);}
+.logo2:hover{transform: scale(1.12) rotate(360deg);}
 
 
 h1 {
