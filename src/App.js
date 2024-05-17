@@ -6,7 +6,9 @@ import Mechanic from './Mechanics/Mechanic.jsx';
 import ReturnRefund from './ReturnAndRefund/ReturnRefund.jsx';
 import Tnc from './Tnc/TnC.jsx';
 import AboutUs from './aboutUs/aboutus.jsx';
+import AddProductForm from './adminlogin/AddProductForm.jsx';
 import AdminLogin from './adminlogin/AdminLogin.jsx';
+import ProductList from './adminlogin/ProductList.jsx';
 import ContactUs from './contactUs/ContactUs.jsx';
 import CustomerSupport from './customerSupport/CustomerSupport.jsx';
 import Home from './home/Home';
@@ -22,7 +24,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/spare" element={<SpareParts />} />
         <Route path="/signIn" element={<Signupin />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
+        {/* <Route path="/adminlogin" element={<AdminLogin />} /> */}
+        <Route path="/adminproduct" element={<ProductList />} />
+        <Route path="/addproduct" element={<AddProductForm />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/tnc" element={<Tnc />} />

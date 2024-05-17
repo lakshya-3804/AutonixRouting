@@ -3,7 +3,10 @@ import Header from "../Header/Header";
 import "./SpareParts.css";
 import TrendingCard from "./TrendingCard";
 import dat from "./trendingCardData.js"
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
+import AdminProdCard from "../adminlogin/AdminProdCard";
+
+import '../adminlogin/ProductList.css';
 export default function SpareParts(){
     function fill(item){
         return <TrendingCard 
@@ -15,6 +18,33 @@ export default function SpareParts(){
     useEffect(()=>{
       window.scrollTo(0, 0);
     },[])
+
+    
+    function fill2(item) {
+      return <AdminProdCard
+              id={item.id}  // Assuming each item has a unique 'id'
+              pname={item.name}
+              pprice={item.price}
+              pimg={item.image} 
+              pdesc={item.description}
+              cdis="none" />
+      
+  }
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+      fetch("http://localhost:8080/admin/products")
+          .then((res) => {
+              return res.json();
+          })
+          .then((result) => {
+              setData(result);
+              console.log(result);
+          })
+  }, []);
+
     return(
         <>
         <Header />
@@ -48,7 +78,15 @@ export default function SpareParts(){
     <main class="main bd-grid">      
       {dat.map(fill)}      
     </main>
+
     <main>
+                <h1 className="prodhead">Product List</h1>
+                <div className="prodcontainer">
+                    {data.map(fill2)}
+                </div>
+          </main>
+    
+    {/* <main>
 
       <div class="companyHead"><h2>Shop By Brands</h2></div>
       <div class="ShopByCompany">
@@ -99,7 +137,7 @@ export default function SpareParts(){
         
 
       </div>
-    </main>
+    </main> */}
     <Footer />
         </>
     )
