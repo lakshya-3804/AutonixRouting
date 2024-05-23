@@ -21,7 +21,7 @@ export default function AddProductForm(){
             return;
         }
         console.log(data1)
-        fetch("http://localhost:5174/admin/products/add", {
+        fetch("http://localhost:8282/admin/products/add", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data1)

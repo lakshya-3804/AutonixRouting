@@ -33,43 +33,43 @@ export default function Maintenance() {
               <p>Suspension & Fitments</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img2} alt="Batteries" />
               </a>
               <p>Batteries</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img3} alt="AC Service and Repair" />
               </a>
               <p>AC Service & Repair</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img4} alt="Tyres and Wheel Care" />
               </a>
               <p>Tyres & Wheel Care</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img6} alt="Clutch and Body Parts" />
               </a>
               <p>Clutch & Body Parts</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img7} alt="Car Inspections" />
               </a>
               <p>Car Inspections</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img8} alt="Detailing Services" />
               </a>
               <p>Detailing Services</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintainenceBooking">
+              <a href="/maintenanceBooking">
                 <img src={img9} alt="Denting & Painting" />
               </a>
               <p>Denting & Painting</p>

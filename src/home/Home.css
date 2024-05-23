@@ -156,11 +156,10 @@ header{
       height: 450px;
       box-shadow: 0 0 20px #00000080;
     }
-  img{
+.homeimg{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    
   }
   
   .circle {

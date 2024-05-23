@@ -40,7 +40,7 @@ function Booking() {
     };
 
     try {
-      const response = await fetch('http://localhost:5178/service', {
+      const response = await fetch('http://localhost:8282/service', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ function Booking() {
 
   const fetchBookings = async () => {
     try {
-      const response = await fetch('http://localhost:5178/');
+      const response = await fetch('http://localhost:8282/');
       if (response.ok) {
         const data = await response.json();
         setBookings(data);

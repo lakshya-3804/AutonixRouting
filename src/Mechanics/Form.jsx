@@ -25,7 +25,7 @@ export default function Customer() {
         swal.fire("Booked", 'Mechanic is Booked Successfully');
         
         // Only make the fetch call if the booking is confirmed
-        fetch("http://localhost:5173/coustmer/add", {
+        fetch("http://localhost:8282/coustmer/add", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(customer)
@@ -44,7 +44,7 @@ export default function Customer() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/coustmer/getAll")
+    fetch("http://localhost:8282/coustmer/getAll")
       .then(res => res.json())
       .then((result) => {
         setCustomers(result);

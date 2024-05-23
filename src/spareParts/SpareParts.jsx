@@ -35,7 +35,7 @@ export default function SpareParts(){
 
   useEffect(() => {
     window.scrollTo(0, 0);
-      fetch("http://localhost:5174/admin/products")
+      fetch("http://localhost:8282/admin/products")
           .then((res) => {
               return res.json();
           })
@@ -55,7 +55,7 @@ export default function SpareParts(){
 
     <article class="banner">
       <div class="card__img">
-        <img src={require("./essentials/img/1.webp")} />
+        <img className="img" src={require("./essentials/img/1.webp")} />
       </div>
       <div class="card__name">
         <p>Spare Parts at best price</p>

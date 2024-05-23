@@ -22,21 +22,21 @@ export default function Home() {
                         <div className="mechanic-guy"></div>
                         <div className="circle">
                         
-                        <span style={{ "--i": 1 }}><img src={require("../assets/sub_part1.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 2 }}><img src={require("../assets/sub_part2.jpeg")} height="100px" /></span>
-                        <span style={{ "--i": 3 }}><img src={require("../assets/sub_part3.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 4 }}><img src={require("../assets/sub_part5.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 5 }}><img src={require("../assets/sub_part6.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 6 }}><img src={require("../assets/sub_part7.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 7 }}><img src={require("../assets/sub_part1.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 8 }}><img src={require("../assets/sub_part2.jpeg")} height="100px" /></span>
-                        <span style={{ "--i": 9 }}><img src={require("../assets/sub_part3.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 10 }}><img src={require("../assets/sub_part5.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 11 }}><img src={require("../assets/sub_part6.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 12 }}><img src={require("../assets/sub_part7.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 13 }}><img src={require("../assets/sub_part5.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 14 }}><img src={require("../assets/sub_part6.jpg")} height="100px" /></span>
-                        <span style={{ "--i": 15 }}><img src={require("../assets/sub_part7.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 1 }}><img className="homeimg" src={require("../assets/sub_part1.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 2 }}><img className="homeimg" src={require("../assets/sub_part2.jpeg")} height="100px" /></span>
+                        <span style={{ "--i": 3 }}><img className="homeimg" src={require("../assets/sub_part3.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 4 }}><img className="homeimg" src={require("../assets/sub_part5.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 5 }}><img className="homeimg" src={require("../assets/sub_part6.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 6 }}><img className="homeimg" src={require("../assets/sub_part7.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 7 }}><img className="homeimg" src={require("../assets/sub_part1.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 8 }}><img className="homeimg" src={require("../assets/sub_part2.jpeg")} height="100px" /></span>
+                        <span style={{ "--i": 9 }}><img className="homeimg" src={require("../assets/sub_part3.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 10 }}><img className="homeimg" src={require("../assets/sub_part5.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 11 }}><img className="homeimg" src={require("../assets/sub_part6.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 12 }}><img className="homeimg" src={require("../assets/sub_part7.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 13 }}><img className="homeimg" src={require("../assets/sub_part5.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 14 }}><img className="homeimg" src={require("../assets/sub_part6.jpg")} height="100px" /></span>
+                        <span style={{ "--i": 15 }}><img className="homeimg" src={require("../assets/sub_part7.jpg")} height="100px" /></span>
 
                         </div>
                     </div>

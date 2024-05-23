@@ -1,50 +1,64 @@
-import "./Signupin.css"
-import { useState } from "react";
-// import axios from 'axios';
-// import useNavigate from 'react-router-dom';
+import "./Signupin.css";
+import { useState, useContext } from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import auto from './assets/Auto.png'
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/footer.jsx";
+import { AuthContext } from './AuthContext';
+import Swal from 'sweetalert2'
+
+const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
+
+const loginAPICall = (loginObj) => axios.post(
+    AUTH_REST_API_BASE_URL + '/login', 
+    loginObj);
 
 
 export default function Signupin() {
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    // const navigate = useNavigate();
+    const [password, setPassword] = useState("");    
+    const navigate = useNavigate();
+
+    
+
+    // Handle Change 
+    const handleChange = (event, param) => {
+
+        if(param === 'Email') {
+          setEmail(event.target.value)
+        } else if (param === 'Password') {
+          setPassword(event.target.value)
+        }
+      }
+  
+  
+      // Submit form
+  
+      function handleLogin(e) {
+          e.preventDefault();
+    
+          const login = {email, password};
+    
+        //   console.log(login);
+    
+          loginAPICall(login).then((response) => {
+            // console.log(response.data);
+            navigate('/home')
+            
+          }).catch(error => {
+            console.error(error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Retry'
+              })
+          })
+        }
 
 
-    // async function login(event) {
-    //     event.preventDefault();
-    //     try {
-    //       await axios.post("http://localhost:8080/api/v1/user/login", {
-    //         email: email,
-    //         password: password,
-    //         }).then((res) => 
-    //         {
-    //          console.log(res.data);
-             
-    //          if (res.data.message == "Email not found") 
-    //          {
-    //            alert("Email not found");
-    //          } 
-    //          else if(res.data.message == "Login Success")
-    //          { 
-    //             navigate('/home');
-    //          } 
-    //           else 
-    //          { 
-    //             alert("Invalid login");
-    //          }
-    //       }, fail => {
-    //        console.error(fail); // Error!
-    //     });
-    //     }
-    //      catch (err) {
-    //       alert(err);
-    //     }
-      
-    //   }
 
     return (
         <>
@@ -56,7 +70,7 @@ export default function Signupin() {
     </div>
     <div className="form">
         <form action="">
-            <fieldset name="form" style={{ color: '#fff' }}>
+        <fieldset name="form" style={{ color: '#fff' }}>
                 <p style={{ fontSize: '30px', fontWeight: 400 }}>SIGN-IN</p>
                 <div className="alterlogin">
                     <button style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', height: '50px', width: '250px' }}>
@@ -82,17 +96,17 @@ export default function Signupin() {
                 <span>CONTINUE WITH YOUR EMAIL</span><br/><br/>
                 <input id="e" type="text" name="email" placeholder="EMAIL/USERNAME" 
                     onChange={(event) => {
-                        setEmail(event.target.value);
+                        handleChange(event, 'Email');
                     }}   
                 /><br/>
                 <input id="pass" type="password" name="password" placeholder="PASSWORD"
                  onChange={(event) => {
-                    setPassword(event.target.value);
+                    handleChange(event, 'Password');
                  }}
                  /><br/>
                 <a href="#" style={{ color: 'lightblue' }}>Forgot Password?</a><br/><br/>
                 <button style={{ fontSize: '20px', fontWeight: 'lighter', backgroundColor: '#9ECA2E', width: '100%', padding: '20px' }} 
-                // onClick={login}
+                onClick={handleLogin}
                 >SIGN-IN</button><br/>
                 <p>New in town? <a href="/register" style={{ color: 'lightblue' }}>Create an account</a></p>
             </fieldset>
@@ -104,3 +118,8 @@ export default function Signupin() {
     )
     
 }
+
+
+// export function PrivateRoute({ isLoggedIn, ...props }) {
+//   return isLoggedIn ? <Route {...props} /> : <Navigate to="/signIn" />;
+// }

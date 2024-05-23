@@ -6,7 +6,7 @@ export default function AdminProdCard(props){
 
     function deleteHandler(id){
         console.log(id)
-        fetch(`http://localhost:5174/admin/products/delete/${id}` , {
+        fetch(`http://localhost:8282/admin/products/delete/${id}` , {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
         })

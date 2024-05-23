@@ -104,7 +104,7 @@ const ContactForm = () => {
         console.log('Form submitted:', formData);
         // Handle form submission
   
-        fetch("http://localhost:1000/customer/add", {
+        fetch("http://localhost:8282/customer/add", {
           method: "POST",
           headers: {"Content-Type":"application/json"},
           body: JSON.stringify(formData)
