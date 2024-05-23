@@ -1,5 +1,6 @@
 
 import './App.css';
+import Booking from './Maintenance/booking.jsx';
 import Maintenance from './Maintenance/maintenance_app.jsx';
 import Customer from './Mechanics/Form.jsx';
 import Mechanic from './Mechanics/Mechanic.jsx';
@@ -36,6 +37,7 @@ function App() {
         <Route path="/maintain" element={<Maintenance />} />
         <Route path="/mechanic" element={<Mechanic/>} />
         <Route path="/form" element={<Customer/>} />
+        <Route path="/maintenanceBooking" element={<Booking />}/>
         
       </Routes>
     </BrowserRouter>

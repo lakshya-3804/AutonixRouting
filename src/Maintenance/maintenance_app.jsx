@@ -1,4 +1,3 @@
-
 import Footer from '../Footer/footer';
 import Header from '../Header/Header';
 import img1 from './img/1.png';
@@ -28,49 +27,49 @@ export default function Maintenance() {
         <div className={styles.container}>
           <div className={styles.photoGrid}>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintenanceBooking">
                 <img src={img1} alt="Suspension and Fitments" />
               </a>
               <p>Suspension & Fitments</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img2} alt="Batteries" />
               </a>
               <p>Batteries</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img3} alt="AC Service and Repair" />
               </a>
               <p>AC Service & Repair</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img4} alt="Tyres and Wheel Care" />
               </a>
               <p>Tyres & Wheel Care</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img6} alt="Clutch and Body Parts" />
               </a>
               <p>Clutch & Body Parts</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img7} alt="Car Inspections" />
               </a>
               <p>Car Inspections</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img8} alt="Detailing Services" />
               </a>
               <p>Detailing Services</p>
             </div>
             <div className={styles.serviceItem}>
-              <a href="/maintain">
+              <a href="/maintainenceBooking">
                 <img src={img9} alt="Denting & Painting" />
               </a>
               <p>Denting & Painting</p>
