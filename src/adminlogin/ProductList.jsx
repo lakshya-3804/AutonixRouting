@@ -20,7 +20,12 @@ export default function ProductList() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8282/admin/products")
+        const token = localStorage.getItem("token");
+        fetch("http://localhost:8282/admin/products",
+            {headers: {
+                "Authorization": `Bearer ${token}`
+            }}
+        )
             .then((res) => {
                 return res.json();
             })
@@ -32,7 +37,7 @@ export default function ProductList() {
 
     return (
         <>
-            <Header buttonvisible="none" />
+            <Header/>
             <main>
                 <h1 className="prodhead">Product List</h1>
                 <div className="prodcontainer">

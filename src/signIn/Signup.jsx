@@ -52,7 +52,8 @@ export default function Signup() {
       console.log(register);
 
       registerAPICall(register).then((response) => {
-        // console.log(response.data);
+
+        localStorage.setItem('token', response.data.token);
         setRegSuccess(true);
 
       }).catch(error => {
@@ -60,7 +61,7 @@ export default function Signup() {
         Swal.fire({
           title: 'Error!',
           text: 'Do you want to continue',
-          icon: 'error',
+          icon: "error",
           confirmButtonText: 'Retry'
         })
       })

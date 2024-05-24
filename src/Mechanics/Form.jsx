@@ -22,15 +22,29 @@ export default function Customer() {
       cancelButtonText: 'Cancel it'
     }).then((result) => {
       if (result.isConfirmed) {
+        const token = localStorage.getItem("token");
+        if(!token){
+          swal.fire("Not logged in!!","Please login first to book a mechanic");
+          return;
+        }
         swal.fire("Booked", 'Mechanic is Booked Successfully');
+        
         
         // Only make the fetch call if the booking is confirmed
         fetch("http://localhost:8282/coustmer/add", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+           },
           body: JSON.stringify(customer)
-        }).then(() => {
-          console.log("New Customer added");
+        }).then(response => {
+          console.log(response);
+          if (response.status === 200) {
+            console.log("New Customer added");
+          } else if (response.status === 403) {
+            console.error("Forbidden: Invalid or expired token");
+          }
         });
       }
     });
@@ -44,7 +58,12 @@ export default function Customer() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8282/coustmer/getAll")
+    const token = localStorage.getItem("token");
+    fetch("http://localhost:8282/coustmer/getAll",
+      {headers: {
+        "Authorization": `Bearer ${token}`
+      }}
+    )
       .then(res => res.json())
       .then((result) => {
         setCustomers(result);

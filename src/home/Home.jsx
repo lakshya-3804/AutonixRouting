@@ -3,10 +3,25 @@ import "./Home.css"; // Import your CSS file
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/footer";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-    
 
+    const history = useNavigate();
+
+    const handleSparePartsClick = () => {
+        // Check if a token is present
+        if (localStorage.getItem("token")) {
+          // If a token is present, navigate to the "/spare" route
+          history("/spare");
+        } else {
+          // If no token is present, display a pop-up asking the user to log in
+          Swal.fire("Not logged in!!","Please log in to view this page.");
+          return;
+        }
+      };
+    
     return (
         <>
         <Header />
@@ -45,15 +60,15 @@ export default function Home() {
 
             <div className="body-title-outside-section">
                 <h1>Welcome To Autonix</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates aut tempora sequi tenetur obcaecati facilis dolorem, vel quas adipisci!</p>
+                <p>Discover premium quality luxury car-spare-parts at Autonix, your ultimate destination for top-tier automotive excellence.</p>
             </div>
 
             <div className="services-part" id="serv">
                 <h1>Services</h1>
                 <div className="services-container">
-                    <Link to="/spare" className="services-container-box" id="services-container-box1">
+                    <div to="/spare" className="services-container-box" id="services-container-box1" onClick={handleSparePartsClick}>
                         <h3><a href="/spare" style={{ textDecoration: "none", color: "white" }}>Spare Parts</a></h3>
-                    </Link>
+                    </div>
                     <Link to="/maintain" className="services-container-box" id="services-container-box2">
                         <h3><a href="/maintain" style={{ textDecoration: "none", color: "white" }}>Maintenance Services</a></h3>
                     </Link>

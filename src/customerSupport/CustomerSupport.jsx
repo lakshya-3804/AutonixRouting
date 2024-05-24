@@ -2,6 +2,7 @@ import styles from './CustomerSupport.module.css';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/footer.jsx';
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 
 const TopSection = () => (
@@ -101,16 +102,25 @@ const ContactForm = () => {
       if (Object.keys(validationErrors).length > 0) {
         setErrors(validationErrors);
       } else {
+
+        const token = localStorage.getItem('token');
+        if(!token) { 
+          Swal.fire("Not logged in", "Please Login first to raise an issue");
+          return;
+        }
         console.log('Form submitted:', formData);
         // Handle form submission
   
         fetch("http://localhost:8282/customer/add", {
           method: "POST",
-          headers: {"Content-Type":"application/json"},
+          headers: {
+            "Content-Type":"application/json",
+            "Authorization" : `Bearer ${token}`
+          },
           body: JSON.stringify(formData)
         }).then(() => {
           console.log("Customer added successfully");
-          alert('Customer problem added successfully');
+          Swal.fire("Success!!",'Customer problem added successfully');
           setFormData({
             firstName: '',
             lastName: '',

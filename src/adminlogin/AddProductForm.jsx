@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../Header/Header";
 import img24 from '../Mechanics/images/AUTONIX_icons/Automotive.png';
+import swal from 'sweetalert2';
 
 export default function AddProductForm(){
 
@@ -8,6 +9,7 @@ export default function AddProductForm(){
     const [pprice,setpprice]=useState("");
     const [pdesc,setpdesc]=useState("");
     const [pimg,setpimg]=useState("");
+    const token = localStorage.getItem("token");
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -16,22 +18,34 @@ export default function AddProductForm(){
             "price": pprice,
             "description": pdesc ,
             "image": pimg};
+        if(!token){
+          swal.fire("Not logged in!!","Please login first to add new products");
+          return;
+        }
         if (!pname || !pprice || !pdesc || !pimg) {
-            window.alert("Please fill in all fields.");
+            swal.fire("Incomplete data!!","Please fill in all fields.");
             return;
         }
-        console.log(data1)
+        console.log(data1, token)
         fetch("http://localhost:8282/admin/products/add", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+             },
             body: JSON.stringify(data1)
         })
-        .then(() => {
-            window.alert("Item added successfully");
-            setpname("");
-            setpprice("");
-            setpdesc("");
-            setpimg("");
+        .then((response) => {
+            if (response.status === 200) {
+              console.log("New Customer added");
+              swal.fire("Success!!","Item added successfully");
+              setpname("");
+              setpprice("");
+              setpdesc("");
+              setpimg("");
+            } else {
+              console.error("Forbidden: Invalid or expired token", token);
+            }
         })
         .catch(error => {
             console.error("Error adding item:", error);

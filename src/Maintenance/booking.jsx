@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 // import { Link } from "react-router-dom";
 import Footer from "../Footer/footer";
 import img24 from '../Mechanics/images/AUTONIX_icons/Automotive.png';
+import Swal from 'sweetalert2';
 
 function Booking() {
   const initialFormData = {
@@ -40,10 +41,16 @@ function Booking() {
     };
 
     try {
+      const token = localStorage.getItem('token');
+      if(!token) { 
+        Swal.fire("Not logged in", "Please Login first to Book a Service");
+        return;
+      }
       const response = await fetch('http://localhost:8282/service', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          "Authorization" : `Bearer ${token}`
         },
         body: JSON.stringify(serviceEntity)
       });
@@ -51,7 +58,7 @@ function Booking() {
       if (response.ok) {
         const result = await response.json();
         console.log('Service saved successfully:', result);
-        alert('Your Booking has been confirmed!');
+        Swal.fire("Success!!",'Your Booking has been confirmed!');
         // Reset the form after successful submission
         setFormData(initialFormData);
         // Fetch all bookings to update the list
@@ -66,7 +73,12 @@ function Booking() {
 
   const fetchBookings = async () => {
     try {
-      const response = await fetch('http://localhost:8282/');
+      const response = await fetch('http://localhost:8282/',
+        {headers: {
+          "Content-Type": "application/json",
+          "Authorization" : "Bearer "+localStorage.getItem("token")
+        }}
+      );
       if (response.ok) {
         const data = await response.json();
         setBookings(data);

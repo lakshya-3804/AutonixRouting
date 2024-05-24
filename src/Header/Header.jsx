@@ -1,5 +1,6 @@
 import "./Header.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";  // Import useHistory from react-router-dom
 
 export default function Header(props) {
 
@@ -7,6 +8,7 @@ export default function Header(props) {
     const [ini, setIni] = useState(0);
     const [st, setSt] = useState("0");
     const [isSideNavVisible, setIsSideNavVisible] = useState(false);
+    const history = useNavigate();
 
     useEffect(() => {
         const header = document.getElementById("head");
@@ -48,6 +50,15 @@ export default function Header(props) {
         setSt(document.getElementById("sidenav").style.top);
     };
 
+    const handleLogout = () => {
+        // Remove the token from localStorage
+        localStorage.removeItem("token");
+      
+        // Redirect the user to the Sign In page
+        history("/signIn");
+    };
+      
+
     return (
         <>
             <div id="sidenav" className={isSideNavVisible ? "visible" : ""}>
@@ -69,7 +80,7 @@ export default function Header(props) {
                     <a href="/cs">Customer Support</a><br />
                     <a href="/tnc">Terms and Conditions</a><br />
                     <a href="/return">Return and Refund Policy</a><br />
-                    <a href="/adminproduct">Manage Product</a>
+                    <a href="/adminproduct">Manage Products</a>
                 </div>
             </div>
 
@@ -89,7 +100,13 @@ export default function Header(props) {
                         </svg>
                     </span>
                     <span className="contact" style={{ paddingLeft: "10px",display: props.buttonvisible || "visible"}} >
+                    {localStorage.getItem("token") ? (
+                        // If a token is present, render the Sign Out button
+                        <button onClick={handleLogout} style={{ padding: "5px", backgroundColor: "yellowgreen", border: "1px solid black", borderRadius: "5px" }} id="signInBtnHeader">Sign Out</button>
+                        ) : (
+                        // If no token is present, render the Sign In button
                         <a href="/signIn"><button style={{ padding: "5px", backgroundColor: "yellowgreen", border: "1px solid black", borderRadius: "5px" }} id="signInBtnHeader">Sign In</button></a>
+                    )}
                     </span>
                 </div>
             </header>

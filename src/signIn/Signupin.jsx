@@ -45,6 +45,7 @@ export default function Signupin() {
     
           loginAPICall(login).then((response) => {
             // console.log(response.data);
+            localStorage.setItem('token', response.data.token);
             navigate('/home')
             
           }).catch(error => {
