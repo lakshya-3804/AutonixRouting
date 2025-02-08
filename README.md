@@ -44,11 +44,11 @@ npm run dev
 ```
 
 ## **⚡ Usage**
-1️⃣ Sign up / Log in to your account.
-2️⃣ Browse spare parts or book vehicle services.
-3️⃣ Add items to cart and proceed to checkout.
-4️⃣ Choose service date and confirm the booking.
-5️⃣ Make a secure payment and get order confirmation.  
+1️⃣ Sign up / Log in to your account.  
+2️⃣ Browse spare parts or book vehicle services.  
+3️⃣ Add items to cart and proceed to checkout.  
+4️⃣ Choose service date and confirm the booking.  
+5️⃣ Make a secure payment and get order confirmation.    
 
 ## **🔐 Authentication**
 - JWT-based authentication ensures secure login & registration.
