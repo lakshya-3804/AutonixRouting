@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# **Autonix - Automobile Spare Parts & Services 🚗**  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **📌 Overview**  
+**Autonix** is a **modern web application** designed for **automobile spare parts** and service bookings. The frontend is built with **ReactJS** and ensures a seamless user experience with **real-time service availability**, **secure authentication**, and **intuitive UI design**. 
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **🚀 Features**  
+✅ **Search & Browse Spare Parts**  
+✅ **Book Vehicle Services Online**  
+✅ **User Authentication (Signup/Login)**  
+✅ **Secure Payments Integration**  
+✅ **Responsive UI with Dark Mode**  
+✅ **Interactive & Fast Filtering System**  
+✅ **User Dashboard & Order Tracking**   
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **🛠️ Tech Stack**  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Frontend:**  
+- **ReactJS** ⚛️  
+- **Tailwind CSS** 🎨  
+- **Redux** (State Management)  
+- **React Router** (Navigation)  
+- **Axios** (API Calls)  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **📦 Installation & Setup**  
 
-### `npm run build`
+### **1️⃣ Clone the Repository**  
+```sh
+git clone https://github.com/lakshya-3804/Tixly.git
+cd Tixly
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **2️⃣ Install Dependencies and Run**
+Frontend:
+```sh
+cd frontend
+npm install
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **⚡ Usage**
+1️⃣ Sign up or log in to your account.  
+2️⃣ Select the service (Bus, Train, Flight, Movie).  
+3️⃣ Choose your destination, date, and preferred seat.  
+4️⃣ Proceed with secure payment.  
+5️⃣ Get instant confirmation & e-ticket.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **🔐 Authentication**
+- JWT-based authentication ensures secure login & registration.
+- Role-based access for users and admins.
+- Passwords are securely hashed before storage.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
