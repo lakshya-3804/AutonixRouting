@@ -38,9 +38,8 @@ cd AutonixRouting
 ### **2️⃣ Install Dependencies and Run**
 Frontend:
 ```sh
-cd frontend
 npm install
-npm run dev
+npm run start
 ```
 
 ## **⚡ Usage**
