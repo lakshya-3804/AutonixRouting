@@ -9,7 +9,7 @@ export default function AddProductForm(){
     const [pprice,setpprice]=useState("");
     const [pdesc,setpdesc]=useState("");
     const [pimg,setpimg]=useState("");
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -18,39 +18,39 @@ export default function AddProductForm(){
             "price": pprice,
             "description": pdesc ,
             "image": pimg};
-        if(!token){
-          swal.fire("Not logged in!!","Please login first to add new products");
-          return;
-        }
+        // if(!token){
+        //   swal.fire("Not logged in!!","Please login first to add new products");
+        //   return;
+        // }
         if (!pname || !pprice || !pdesc || !pimg) {
             swal.fire("Incomplete data!!","Please fill in all fields.");
             return;
         }
-        console.log(data1, token)
-        fetch("http://localhost:8282/admin/products/add", {
-            method: "POST",
-            headers: { 
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${token}`
-             },
-            body: JSON.stringify(data1)
-        })
-        .then((response) => {
-            if (response.status === 200) {
-              console.log("New Customer added");
-              swal.fire("Success!!","Item added successfully");
-              setpname("");
-              setpprice("");
-              setpdesc("");
-              setpimg("");
-            } else {
-              console.error("Forbidden: Invalid or expired token", token);
-            }
-        })
-        .catch(error => {
-            console.error("Error adding item:", error);
-            window.alert("Failed to add item");
-        });
+        // console.log(data1, token)
+        // fetch("http://localhost:8282/admin/products/add", {
+        //     method: "POST",
+        //     headers: { 
+        //       "Content-Type": "application/json",
+        //       "Authorization": `Bearer ${token}`
+        //      },
+        //     body: JSON.stringify(data1)
+        // })
+        // .then((response) => {
+        //     if (response.status === 200) {
+        //       console.log("New Customer added");
+        //       swal.fire("Success!!","Item added successfully");
+        //       setpname("");
+        //       setpprice("");
+        //       setpdesc("");
+        //       setpimg("");
+        //     } else {
+        //       console.error("Forbidden: Invalid or expired token", token);
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error("Error adding item:", error);
+        //     window.alert("Failed to add item");
+        // });
 
            
       }

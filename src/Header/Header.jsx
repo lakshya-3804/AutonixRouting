@@ -52,7 +52,7 @@ export default function Header(props) {
 
     const handleLogout = () => {
         // Remove the token from localStorage
-        localStorage.removeItem("token");
+        // localStorage.removeItem("token");
       
         // Redirect the user to the Sign In page
         history("/signIn");
@@ -100,13 +100,14 @@ export default function Header(props) {
                         </svg>
                     </span>
                     <span className="contact" style={{ paddingLeft: "10px",display: props.buttonvisible || "visible"}} >
-                    {localStorage.getItem("token") ? (
+                    {/* {localStorage.getItem("token") ? (
                         // If a token is present, render the Sign Out button
                         <button onClick={handleLogout} style={{ padding: "5px", backgroundColor: "yellowgreen", border: "1px solid black", borderRadius: "5px" }} id="signInBtnHeader">Sign Out</button>
                         ) : (
                         // If no token is present, render the Sign In button
                         <a href="/signIn"><button style={{ padding: "5px", backgroundColor: "yellowgreen", border: "1px solid black", borderRadius: "5px" }} id="signInBtnHeader">Sign In</button></a>
-                    )}
+                    )} */}
+                    <a href="/signIn"><button style={{ padding: "5px", backgroundColor: "yellowgreen", border: "1px solid black", borderRadius: "5px" }} id="signInBtnHeader">Sign In</button></a>
                     </span>
                 </div>
             </header>

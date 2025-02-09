@@ -8,11 +8,11 @@ import Footer from "../Footer/footer.jsx";
 import { AuthContext } from './AuthContext';
 import Swal from 'sweetalert2'
 
-const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
+// const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
 
-const loginAPICall = (loginObj) => axios.post(
-    AUTH_REST_API_BASE_URL + '/login', 
-    loginObj);
+// const loginAPICall = (loginObj) => axios.post(
+//     AUTH_REST_API_BASE_URL + '/login', 
+//     loginObj);
 
 
 export default function Signupin() {
@@ -43,20 +43,20 @@ export default function Signupin() {
     
         //   console.log(login);
     
-          loginAPICall(login).then((response) => {
-            // console.log(response.data);
-            localStorage.setItem('token', response.data.token);
-            navigate('/home')
+        //   loginAPICall(login).then((response) => {
+        //     // console.log(response.data);
+        //     localStorage.setItem('token', response.data.token);
+        //     navigate('/home')
             
-          }).catch(error => {
-            console.error(error);
-            Swal.fire({
-                title: 'Error!',
-                text: 'Do you want to continue',
-                icon: 'error',
-                confirmButtonText: 'Retry'
-              })
-          })
+        //   }).catch(error => {
+        //     console.error(error);
+        //     Swal.fire({
+        //         title: 'Error!',
+        //         text: 'Do you want to continue',
+        //         icon: 'error',
+        //         confirmButtonText: 'Retry'
+        //       })
+        //   })
         }
 
 

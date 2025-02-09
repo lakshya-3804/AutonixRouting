@@ -40,59 +40,59 @@ function Booking() {
       serviceserviceyouwant: formData.Subject
     };
 
-    try {
-      const token = localStorage.getItem('token');
-      if(!token) { 
-        Swal.fire("Not logged in", "Please Login first to Book a Service");
-        return;
-      }
-      const response = await fetch('http://localhost:8282/service', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          "Authorization" : `Bearer ${token}`
-        },
-        body: JSON.stringify(serviceEntity)
-      });
+    // try {
+      // const token = localStorage.getItem('token');
+      // if(!token) { 
+      //   Swal.fire("Not logged in", "Please Login first to Book a Service");
+      //   return;
+      // }
+      // const response = await fetch('http://localhost:8282/service', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     "Authorization" : `Bearer ${token}`
+      //   },
+      //   body: JSON.stringify(serviceEntity)
+      // });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Service saved successfully:', result);
-        Swal.fire("Success!!",'Your Booking has been confirmed!');
-        // Reset the form after successful submission
-        setFormData(initialFormData);
-        // Fetch all bookings to update the list
-        fetchBookings();
-      } else {
-        console.error('Error saving service:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error saving service:', error);
-    }
+    //   if (response.ok) {
+    //     const result = await response.json();
+    //     console.log('Service saved successfully:', result);
+    //     Swal.fire("Success!!",'Your Booking has been confirmed!');
+    //     // Reset the form after successful submission
+    //     setFormData(initialFormData);
+    //     // Fetch all bookings to update the list
+    //     fetchBookings();
+    //   } else {
+    //     console.error('Error saving service:', response.statusText);
+    //   }
+    // } catch (error) {
+    //   console.error('Error saving service:', error);
+    // }
   };
 
-  const fetchBookings = async () => {
-    try {
-      const response = await fetch('http://localhost:8282/',
-        {headers: {
-          "Content-Type": "application/json",
-          "Authorization" : "Bearer "+localStorage.getItem("token")
-        }}
-      );
-      if (response.ok) {
-        const data = await response.json();
-        setBookings(data);
-      } else {
-        console.error('Error fetching bookings:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error fetching bookings:', error);
-    }
-  };
+  // const fetchBookings = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:8282/',
+  //       {headers: {
+  //         "Content-Type": "application/json",
+  //         "Authorization" : "Bearer "+localStorage.getItem("token")
+  //       }}
+  //     );
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setBookings(data);
+  //     } else {
+  //       console.error('Error fetching bookings:', response.statusText);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching bookings:', error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchBookings();
-  }, []);
+  // useEffect(() => {
+  //   fetchBookings();
+  // }, []);
 
   return (
     <>

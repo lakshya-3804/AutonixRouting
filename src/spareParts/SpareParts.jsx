@@ -33,17 +33,17 @@ export default function SpareParts(){
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-      fetch("http://localhost:8282/admin/products")
-          .then((res) => {
-              return res.json();
-          })
-          .then((result) => {
-              setData(result);
-              console.log(result);
-          })
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //     fetch("http://localhost:8282/admin/products")
+  //         .then((res) => {
+  //             return res.json();
+  //         })
+  //         .then((result) => {
+  //             setData(result);
+  //             console.log(result);
+  //         })
+  // }, []);
 
     return(
         <>
@@ -79,12 +79,12 @@ export default function SpareParts(){
       {dat.map(fill)}      
     </main>
 
-    <main>
+    {/* <main>
                 <h1 className="prodhead">Product List</h1>
                 <div className="prodcontainer">
                     {data.map(fill2)}
                 </div>
-          </main>
+          </main> */}
     
     {/* <main>
 

@@ -11,11 +11,11 @@ import Swal from 'sweetalert2'
 
 
 
-const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
+// const AUTH_REST_API_BASE_URL = "http://localhost:8282/auth"
 
-const registerAPICall = (registerObj) => axios.post(
-    AUTH_REST_API_BASE_URL + '/signup', 
-    registerObj);
+// const registerAPICall = (registerObj) => axios.post(
+//     AUTH_REST_API_BASE_URL + '/signup', 
+//     registerObj);
 
 
 export default function Signup() {
@@ -51,24 +51,24 @@ export default function Signup() {
 
       console.log(register);
 
-      registerAPICall(register).then((response) => {
+      // registerAPICall(register).then((response) => {
 
-        localStorage.setItem('token', response.data.token);
-        setRegSuccess(true);
+      //   localStorage.setItem('token', response.data.token);
+      //   setRegSuccess(true);
 
-      }).catch(error => {
-        console.error(error);
-        Swal.fire({
-          title: 'Error!',
-          text: 'Do you want to continue',
-          icon: "error",
-          confirmButtonText: 'Retry'
-        })
-      })
+      // }).catch(error => {
+      //   console.error(error);
+      //   Swal.fire({
+      //     title: 'Error!',
+      //     text: 'Do you want to continue',
+      //     icon: "error",
+      //     confirmButtonText: 'Retry'
+      //   })
+      // })
 
-      if(regSuccess) {
-        history('/home')
-      }
+      // if(regSuccess) {
+      //   history('/home')
+      // }
 
     }
   

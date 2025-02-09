@@ -2,25 +2,25 @@
 
 export default function AdminProdCard(props){
 
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
     function deleteHandler(id){
         console.log(id)
-        fetch(`http://localhost:8282/admin/products/delete/${id}` , {
-            method: "DELETE",
-            headers: { 
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-             }
-        })
-        .then((res) => {
-            return res.json();
-        })
-        .then((result) => {
-            console.log(result);
+        // fetch(`http://localhost:8282/admin/products/delete/${id}` , {
+        //     method: "DELETE",
+        //     headers: { 
+        //         "Content-Type": "application/json",
+        //         "Authorization": `Bearer ${token}`
+        //      }
+        // })
+        // .then((res) => {
+        //     return res.json();
+        // })
+        // .then((result) => {
+        //     console.log(result);
             
-        })
-        window.location.reload(false);
+        // })
+        // window.location.reload(false);
     }
 
 

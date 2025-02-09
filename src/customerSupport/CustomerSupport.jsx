@@ -103,43 +103,43 @@ const ContactForm = () => {
         setErrors(validationErrors);
       } else {
 
-        const token = localStorage.getItem('token');
-        if(!token) { 
-          Swal.fire("Not logged in", "Please Login first to raise an issue");
-          return;
-        }
+        // const token = localStorage.getItem('token');
+        // if(!token) { 
+        //   Swal.fire("Not logged in", "Please Login first to raise an issue");
+        //   return;
+        // }
         console.log('Form submitted:', formData);
         // Handle form submission
   
-        fetch("http://localhost:8282/customer/add", {
-          method: "POST",
-          headers: {
-            "Content-Type":"application/json",
-            "Authorization" : `Bearer ${token}`
-          },
-          body: JSON.stringify(formData)
-        }).then(() => {
-          console.log("Customer added successfully");
-          Swal.fire("Success!!",'Customer problem added successfully');
-          setFormData({
-            firstName: '',
-            lastName: '',
-            phoneNumber: '',
-            userName: '',
-            email: '',
-            problem: '',
-          });
-          setErrors({
-            firstName: '',
-            lastName: '',
-            phoneNumber: '',
-            userName: '',
-            email: '',
-            problem: '',
-          });
-        }).catch((error) => {
-          console.error('Error adding customer:', error);
-        });
+        // fetch("http://localhost:8282/customer/add", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type":"application/json",
+        //     "Authorization" : `Bearer ${token}`
+        //   },
+        //   body: JSON.stringify(formData)
+        // }).then(() => {
+        //   console.log("Customer added successfully");
+        //   Swal.fire("Success!!",'Customer problem added successfully');
+        //   setFormData({
+        //     firstName: '',
+        //     lastName: '',
+        //     phoneNumber: '',
+        //     userName: '',
+        //     email: '',
+        //     problem: '',
+        //   });
+        //   setErrors({
+        //     firstName: '',
+        //     lastName: '',
+        //     phoneNumber: '',
+        //     userName: '',
+        //     email: '',
+        //     problem: '',
+        //   });
+        // }).catch((error) => {
+        //   console.error('Error adding customer:', error);
+        // });
       }
     };
 
